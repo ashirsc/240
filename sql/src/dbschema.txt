@@ -1,0 +1,37 @@
+CREATE TABLE Users (
+    UserName text not null PRIMARY KEY,
+    PersonId text,
+    Password TEXT,
+    Email TEXT,
+    FirstName TEXT,
+    LastName TEXT
+);
+
+CREATE TABLE Persons (
+    PersonId text NOT NULL PRIMARY KEY,
+    Descendant text NOT NULL,
+    FirstName text,
+    LastName text,
+    Gender text,
+    Father text,
+    Mother text,
+    Spouse text
+);
+
+CREATE TABLE Events (
+    EventType text NOT NULL,
+    EventId text NOT NULL PRIMARY KEY,
+    Descendant text NOT NULL,
+    PersonId text NOT NULL,
+    Latitude real,
+    Longitude real,
+    Country text,
+    City text,
+    Year int
+);
+
+CREATE TABLE Auth (
+   userName text NOT NULL PRIMARY KEY,
+   PersonId text NOT NULL ,
+   authToken text NOT NULL
+);
