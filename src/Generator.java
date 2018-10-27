@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 import Models.Names;
 import Models.Person;
@@ -15,9 +17,9 @@ import Models.Person;
 
 public class Generator {
 
-    List<String> mnames = null;
-    List<String> fnames = new ArrayList<>();
-    List<String> snames = new ArrayList<>();
+    private List<String> mnames = null;
+    private List<String> fnames = new ArrayList<>();
+    private List<String> snames = new ArrayList<>();
 
     Generator() {
 
@@ -44,13 +46,30 @@ public class Generator {
 
     }
 
+    public static String getId() {
+        return UUID.randomUUID().toString().substring(0, 8);
+    }
+
+    private String getMaleName() {
+        int r = new Random().nextInt(mnames.size());
+        return mnames.get(r);
+    }
+    private String getFemaleName() {
+        int r = new Random().nextInt(fnames.size());
+        return fnames.get(r);
+    }
+    private String getSirName() {
+        int r = new Random().nextInt(snames.size());
+        return snames.get(r);
+    }
+
     private static String fileToString(String filename) throws Exception {
         return new String(Files.readAllBytes(Paths.get(filename)));
     }
 
 
     public Person generateMan() {
-        Person man = new Person();
+        //Person man = new Person(getId());
 
         return null;
     }

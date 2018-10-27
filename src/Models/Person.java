@@ -11,6 +11,18 @@ public class Person {
     String mother;
     String spouse;
 
+    Person(String personId, String descendant, String firstName, String lastName, String gender,
+           String father, String mother, String spouse) {
+        this.personId = personId;
+        this.descendant = descendant;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.father = father;
+        this.mother = mother;
+        this.spouse = spouse;
+    }
+
     public String getPersonId() {
         return personId;
     }

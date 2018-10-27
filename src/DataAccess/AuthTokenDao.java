@@ -7,7 +7,7 @@ import Models.Auth;
 /**
  *
  */
-public class AuthTokenDao {
+public class AuthTokenDao extends Database {
 
     /**
      * @param authToken
